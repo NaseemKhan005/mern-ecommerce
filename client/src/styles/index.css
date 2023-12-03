@@ -2,11 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-*,
-body,
-html {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+* {
 	font-family: "Poppins", sans-serif;
+}
+
+@layer base {
+	*,
+	body,
+	html {
+		@apply m-0 p-0 box-border;
+	}
+
+	html {
+		@apply scroll-smooth;
+	}
+
+	body {
+		@apply overflow-x-hidden;
+	}
 }
