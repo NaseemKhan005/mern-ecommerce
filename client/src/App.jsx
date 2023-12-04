@@ -1,9 +1,17 @@
-import Home from "./pages/Home";
+import Annoucement from "./components/Annoucement";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import NewsLetter from "./components/NewsLetter";
+import ProductList from "./pages/ProductList";
 
 const App = () => {
 	return (
 		<div>
-			<Home />
+			<Navbar />
+			<Annoucement />
+			<ProductList />
+			<NewsLetter />
+			<Footer />
 		</div>
 	);
 };

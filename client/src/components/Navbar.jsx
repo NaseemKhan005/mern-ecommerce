@@ -2,7 +2,6 @@ import { LuSearch } from "react-icons/lu";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 import Button from "./common/Button";
-import Annoucement from "./Annoucement";
 
 const Navbar = () => {
 	return (
@@ -42,9 +41,6 @@ const Navbar = () => {
 						</button>
 					</div>
 				</div>
-			</div>
-			<div>
-				<Annoucement />
 			</div>
 		</div>
 	);
