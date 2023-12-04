@@ -23,7 +23,7 @@ const Login = () => {
 		formData.email.trim() !== "" && formData.password.trim() !== "";
 
 	return (
-		<div className="fixed top-0 left-0 bg-[url('/assets/bg.jpg')] bg-cover bg-center w-full h-screen flex items-center justify-center">
+		<div className="fixed top-0 select-none left-0 bg-[url('/assets/login-bg.jpg')] bg-cover bg-bottom w-full h-screen flex items-center justify-center">
 			<div className="container mx-auto px-5 md:px-10 py-16 before:absolute before:top-0 before:left-0 before:w-full before:h-screen before:bg-black/20 before:-z-10">
 				<div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
 					<div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-sm xl:p-0 dark:bg-gray-800 dark:border-gray-700">
