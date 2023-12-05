@@ -36,8 +36,8 @@ const Login = () => {
 		<div className="fixed top-0 left-0 bg-[url('/assets/register-bg.jpg')] bg-cover bg-bottom w-full min-h-screen h-full flex items-center justify-center select-none">
 			<div className="md:container md:mx-auto md:px-10 md:py-16 before:absolute before:top-0 before:left-0 before:w-full before:min-h-screen before:h-full before:bg-black/20 before:-z-10">
 				<div className="flex items-center justify-center md:px-6 md:py-8 mx-auto md:h-screen lg:py-0">
-					<div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 md:max-w-2xl xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-						<div className="p-6 space-y-4 md:space-y-6 md:p-8 ">
+					<div className="w-screen sm:w-full h-screen sm:h-fit pt-12 sm:pt-0 bg-white sm:rounded-lg shadow dark:border md:mt-0 md:max-w-2xl xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+						<div className="p-4 sm:p-6 space-y-4 md:space-y-6 md:p-8 ">
 							<h1 className="text-xl font-medium leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
 								Create an account
 							</h1>
@@ -58,7 +58,7 @@ const Login = () => {
 												placeholder="Firstname"
 												value={formData.firstName}
 												onChange={handleInputChange}
-												className="px-4 py-3.5 bg-gray-50 border-[1.4px] border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary outline-none focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+												className="px-4 py-3.5 bg-gray-50 border-[1.4px] border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary outline-none focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
 											/>
 										</div>
 										<div>
@@ -75,7 +75,7 @@ const Login = () => {
 												placeholder="Email"
 												value={formData.email}
 												onChange={handleInputChange}
-												className="px-4 py-3.5 bg-gray-50 border-[1.4px] border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary outline-none focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+												className="px-4 py-3.5 bg-gray-50 border-[1.4px] border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary outline-none focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
 											/>
 										</div>
 										<div className="relative">
@@ -92,7 +92,7 @@ const Login = () => {
 												placeholder="Password"
 												value={formData.password}
 												onChange={handleInputChange}
-												className="px-4 py-3.5 bg-gray-50 border-[1.4px] border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary outline-none focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+												className="px-4 pr-9 py-3.5 bg-gray-50 border-[1.4px] border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary outline-none focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
 											/>
 											{showPassword ? (
 												<span
@@ -127,7 +127,7 @@ const Login = () => {
 												placeholder="Lastname"
 												value={formData.lastName}
 												onChange={handleInputChange}
-												className="px-4 py-3.5 bg-gray-50 border-[1.4px] border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary outline-none focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+												className="px-4 py-3.5 bg-gray-50 border-[1.4px] border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary outline-none focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
 											/>
 										</div>
 										<div>
@@ -144,7 +144,7 @@ const Login = () => {
 												placeholder="Username"
 												value={formData.username}
 												onChange={handleInputChange}
-												className="px-4 py-3.5 bg-gray-50 border-[1.4px] border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary outline-none focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+												className="px-4 py-3.5 bg-gray-50 border-[1.4px] border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary outline-none focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
 											/>
 										</div>
 										<div className="relative">
@@ -161,7 +161,7 @@ const Login = () => {
 												placeholder="Confirm Password"
 												value={formData.confirmPassword}
 												onChange={handleInputChange}
-												className="px-4 py-3.5 bg-gray-50 border-[1.4px] border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary outline-none focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+												className="px-4 pr-9 py-3.5 bg-gray-50 border-[1.4px] border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary outline-none focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
 											/>
 											{showConfirmPassword ? (
 												<span
