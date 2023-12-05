@@ -4,8 +4,6 @@ import { LuSearch } from "react-icons/lu";
 import { AiOutlineHeart } from "react-icons/ai";
 import { LiaShoppingBagSolid } from "react-icons/lia";
 
-import Button from "./Button";
-
 const SingleProduct = ({ product }) => {
 	const [showIcons, setShowIcons] = useState(false);
 
@@ -24,20 +22,20 @@ const SingleProduct = ({ product }) => {
 					className="w-full h-full object-cover object-top"
 				/>
 				<div
-				className={`h-full w-full absolute top-0 left-0 bg-black/50 flex items-center justify-center gap-3 overflow-hidden transition-all duration-[.4s] ${
-					showIcons ? "opacity-100 scale-100" : "opacity-0 scale-0"
-				}`}
-			>
-				<span className="bg-white hover:text-primary p-2.5 text-xl rounded-full cursor-pointer">
-					<MdOutlineShoppingCart />
-				</span>
-				<span className="bg-white hover:text-primary p-2.5 text-xl rounded-full cursor-pointer">
-					<LuSearch />
-				</span>
-				<span className="bg-white hover:text-primary p-2.5 text-xl rounded-full cursor-pointer">
-					<AiOutlineHeart />
-				</span>
-			</div>
+					className={`h-full w-full absolute top-0 left-0 bg-black/50 flex items-center justify-center gap-3 overflow-hidden transition-all duration-[.4s] ${
+						showIcons ? "opacity-100 scale-100" : "opacity-0 scale-0"
+					}`}
+				>
+					<span className="bg-white hover:text-primary p-2.5 text-xl rounded-full cursor-pointer">
+						<MdOutlineShoppingCart />
+					</span>
+					<span className="bg-white hover:text-primary p-2.5 text-xl rounded-full cursor-pointer">
+						<LuSearch />
+					</span>
+					<span className="bg-white hover:text-primary p-2.5 text-xl rounded-full cursor-pointer">
+						<AiOutlineHeart />
+					</span>
+				</div>
 			</div>
 
 			<h3 className="capitalize text-lg font-semibold hover:text-primary cursor-pointer mt-3">
@@ -53,8 +51,6 @@ const SingleProduct = ({ product }) => {
 					<span>add to cart</span>
 				</button>
 			</div>
-
-			
 		</div>
 	);
 };

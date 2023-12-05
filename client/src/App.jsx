@@ -2,14 +2,14 @@ import Annoucement from "./components/Annoucement";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import NewsLetter from "./components/NewsLetter";
-import Register from "./pages/Register";
+import Cart from "./pages/Cart";
 
 const App = () => {
 	return (
 		<div>
 			<Annoucement />
 			<Navbar />
-			<Register />
+			<Cart />
 			<NewsLetter />
 			<Footer />
 		</div>
