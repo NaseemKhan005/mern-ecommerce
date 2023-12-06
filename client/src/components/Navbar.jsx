@@ -23,7 +23,7 @@ const Navbar = () => {
 					</Link>
 
 					<ul
-						className={`flex md:items-center md:relative fixed bg-white w-80 shadow-lg md:w-auto h-screen md:h-auto md:shadow-none right-0 top-0 z-10 flex-col md:flex-row md:gap-5 lg:gap-10 capitalize pt-32 gap-6 px-5 md:px-0 transition-all duration-500 md:pt-0 ${
+						className={`flex md:items-center md:relative fixed bg-white w-80 shadow-lg md:w-auto h-screen md:h-auto md:shadow-none top-0 z-10 flex-col md:flex-row md:gap-5 lg:gap-10 capitalize pt-32 gap-6 px-5 md:px-0 transition-all duration-500 md:pt-0 ${
 							menu ? "right-0" : "-right-full md:right-0"
 						}`}
 					>

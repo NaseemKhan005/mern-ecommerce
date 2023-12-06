@@ -10,6 +10,7 @@ import ProductList from "../pages/ProductList";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Layout from "../components/common/Layout";
+import Contact from "../pages/Contact";
 
 const Routes = () => {
 	return (
@@ -43,7 +44,7 @@ const Routes = () => {
 					path="/contact"
 					element={
 						<Layout>
-							<ProductList />
+							<Contact />
 						</Layout>
 					}
 				/>
