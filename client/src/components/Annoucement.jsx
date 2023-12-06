@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Annoucement = () => {
 	const [closeAnnoucement, setCloseAnnoucement] = useState(false);
@@ -13,8 +14,11 @@ const Annoucement = () => {
 			<p className="text-center w-full">
 				<span className="font-semibold">🔥Super Deal!</span> Free Shipping in
 				Orders over <span className="font-semibold">$50</span>
-
-				<button className="ml-2 capitalize font-medium underline underline-offset-4 decoration-2 text-orange-500 hover:tracking-wider transition-all duration-500">shop now</button>
+				<Link to="/products">
+					<button className="ml-2 capitalize font-medium underline underline-offset-4 decoration-2 text-orange-500 hover:tracking-wider transition-all duration-500">
+						shop now
+					</button>
+				</Link>
 			</p>
 			<button
 				onClick={() => setCloseAnnoucement(true)}

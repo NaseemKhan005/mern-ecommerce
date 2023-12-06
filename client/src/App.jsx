@@ -1,19 +1,7 @@
-import Annoucement from "./components/Annoucement";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import NewsLetter from "./components/NewsLetter";
-import Cart from "./pages/Cart";
+import Routes from "./routes/Routes";
 
 const App = () => {
-	return (
-		<div>
-			<Annoucement />
-			<Navbar />
-			<Cart />
-			<NewsLetter />
-			<Footer />
-		</div>
-	);
+	return <Routes />;
 };
 
 export default App;
