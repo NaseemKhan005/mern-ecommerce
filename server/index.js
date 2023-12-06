@@ -3,12 +3,16 @@ const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
+const userRouter = require("./routes/user");
+
 dotenv.config();
-const PORT = process.env.PORT || 5000;
+app.use(express.json());
 
 mongoose
 	.connect(process.env.MONGODB_URL)
-	.then(() => console.log("MongoDB connection successfull!!!"))
-	.catch((err) => console.log("Couldn't connect to Mongo DB" + err));
+	.then(() => console.log("MongoDB connection Successfull!!!"))
+	.catch((error) => console.log("MongoDB connection Error: " + error));
 
-app.listen(PORT, () => console.log(`Server is Running at port ${PORT}`));
+app.use("/api/users", userRouter);
+
+app.listen(process.env.PORT || 5000, () => console.log("Server is Running..."));
