@@ -33,3 +33,13 @@ export const registerUser = async (req, res, next) => {
     next(error);
   }
 };
+
+export const loginUser = async (req, res, next) => {
+  try {
+    res.status(200).json({
+      message: "User logged in successfully",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
