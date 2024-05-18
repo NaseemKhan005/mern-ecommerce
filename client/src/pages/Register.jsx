@@ -39,6 +39,24 @@ const Login = () => {
                 <div className="flex flex-col gap-3">
                   <div>
                     <label
+                      htmlFor="username"
+                      className="block mb-2 cursor-pointer text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Your username
+                    </label>
+                    <input
+                      type="text"
+                      name="username"
+                      id="username"
+                      placeholder="Username"
+                      value={formData.username}
+                      onChange={handleInputChange}
+                      className="px-4 py-3.5 bg-gray-50 border-[1.4px] border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary outline-none focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                    />
+                  </div>
+
+                  <div>
+                    <label
                       htmlFor="email"
                       className="block mb-2 cursor-pointer text-sm font-medium text-gray-900 dark:text-white"
                     >
@@ -86,24 +104,6 @@ const Login = () => {
                         <AiOutlineEyeInvisible />
                       </span>
                     )}
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="username"
-                      className="block mb-2 cursor-pointer text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      Your username
-                    </label>
-                    <input
-                      type="text"
-                      name="username"
-                      id="username"
-                      placeholder="Username"
-                      value={formData.username}
-                      onChange={handleInputChange}
-                      className="px-4 py-3.5 bg-gray-50 border-[1.4px] border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary outline-none focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
-                    />
                   </div>
                 </div>
 
