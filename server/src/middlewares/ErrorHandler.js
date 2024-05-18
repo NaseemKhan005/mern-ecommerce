@@ -1,6 +1,6 @@
 import { config } from "../config/config.js";
 
-const ErrorHandler = (error, req, res, next) => {
+const errorHandler = (error, req, res, next) => {
   const statusCode = error.status || 500;
   const message = error.message || "Something went wrong";
 
@@ -14,4 +14,4 @@ const ErrorHandler = (error, req, res, next) => {
   next();
 };
 
-export default ErrorHandler;
+export default errorHandler;
