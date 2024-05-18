@@ -1,11 +1,12 @@
+import createError from "../utils/createError.js";
 import verifyToken from "./verifyToken.js";
 
 const verifyAdmin = (req, res, next) => {
   verifyToken(req, res, () => {
-    if (req.user.isAdmin) {
+    if (req.user && req.user.isAdmin) {
       next();
     } else {
-      next(handleError(403, "You are not authorized!"));
+      next(createError(403, "You are not authorized!"));
     }
   });
 };

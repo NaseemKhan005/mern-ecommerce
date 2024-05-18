@@ -1,3 +1,4 @@
+import createError from "../utils/createError.js";
 import verifyToken from "./verifyToken.js";
 
 const verifyUser = (req, res, next) => {
@@ -5,7 +6,7 @@ const verifyUser = (req, res, next) => {
     if (req.user.id === req.params.id || req.user.isAdmin) {
       next();
     } else {
-      next(handleError(403, "You are not authorized!"));
+      next(createError(403, "You are not authorized!"));
     }
   });
 };
