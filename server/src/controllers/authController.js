@@ -36,8 +36,23 @@ export const registerUser = async (req, res, next) => {
 
 export const loginUser = async (req, res, next) => {
   try {
+    const { email, password } = req.body;
+
+    if (!email) return next(createError(400, "Email is required"));
+    if (!password) return next(createError(400, "Password is required"));
+
+    const user = await User.findOne({ email });
+    if (!user) return next(createError(400, "Wrong Credentials"));
+
+    const isPasswordCorrect = await bcrypt.compare(password, user.password);
+    if (!isPasswordCorrect) return next(createError(400, "Wrong Credentials"));
+
+    generateToken(user, res);
+    const { password: userPassword, ...userInfo } = user._doc;
+
     res.status(200).json({
       message: "User logged in successfully",
+      user: userInfo,
     });
   } catch (error) {
     next(error);
