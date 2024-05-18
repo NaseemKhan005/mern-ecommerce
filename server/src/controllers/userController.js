@@ -23,3 +23,17 @@ export const updateUser = async (req, res, next) => {
     next(error);
   }
 };
+
+export const deleteUser = async (req, res, next) => {
+  try {
+    const userId = req.params.id;
+
+    await User.findByIdAndDelete(userId);
+
+    res.status(200).json({
+      message: "User deleted successfully",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
