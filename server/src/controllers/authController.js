@@ -1,3 +1,5 @@
+import bcrypt from "bcrypt";
+
 import createError from "../utils/createError.js";
 import User from "../models/UserModel.js";
 
@@ -12,7 +14,12 @@ export const registerUser = async (req, res, next) => {
     const existingUser = await User.findOne({ email });
     if (existingUser) return next(createError(400, "User already exists"));
 
-    const user = await User.create({ username, email, password });
+    const hashedPassword = await bcrypt.hash(password, 12);
+    const user = await User.create({
+      username,
+      email,
+      password: hashedPassword,
+    });
 
     const { password: userPassword, ...userInfo } = user._doc;
 
