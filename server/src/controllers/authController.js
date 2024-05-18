@@ -1,4 +1,5 @@
 import createError from "../utils/createError.js";
+import User from "../models/UserModel.js";
 
 export const registerUser = async (req, res, next) => {
   try {
@@ -8,8 +9,16 @@ export const registerUser = async (req, res, next) => {
     if (!email) return next(createError(400, "Email is required"));
     if (!password) return next(createError(400, "Password is required"));
 
+    const existingUser = await User.findOne({ email });
+    if (existingUser) return next(createError(400, "User already exists"));
+
+    const user = await User.create({ username, email, password });
+
+    const { password: userPassword, ...userInfo } = user._doc;
+
     res.status(201).json({
       message: "User registered successfully",
+      user: userInfo,
     });
   } catch (error) {
     next(error);
