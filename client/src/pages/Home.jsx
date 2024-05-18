@@ -13,3 +13,7 @@ const Home = () => {
 };
 
 export default Home;
+
+// how to center a div in js?
+
+// how to make a login form using next js?

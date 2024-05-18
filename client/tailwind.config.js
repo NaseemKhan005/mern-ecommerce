@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				clicker_script: ['"Clicker Script"', "cursive"],
+				clicker_script: ["Clicker Script", "cursive"],
 			},
 			colors: {
 				primary: "#FF4400",
