@@ -11,3 +11,26 @@ export const createNewProduct = async (req, res, next) => {
     next(error);
   }
 };
+
+export const updateProduct = async (req, res, next) => {
+  try {
+    const productId = req.params.id;
+
+    const updatedProduct = await Product.findByIdAndUpdate(
+      productId,
+      req.body,
+      {
+        new: true,
+      }
+    );
+
+    res
+      .status(200)
+      .json({
+        message: "Product updated Successfully!",
+        product: updatedProduct,
+      });
+  } catch (error) {
+    next(error);
+  }
+};
