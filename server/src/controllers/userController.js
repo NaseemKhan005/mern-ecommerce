@@ -58,11 +58,44 @@ export const getSingleUser = async (req, res, next) => {
 
 export const getAllUsers = async (req, res, next) => {
   try {
-    const users = await User.find().select("-password");
+    const query = req.query.new;
+
+    const users = query
+      ? await User.find().select("-password").sort({ _id: -1 }).limit(5)
+      : await User.find().select("-password");
 
     res.status(200).json({
       message: "All users fetched successfully",
       users: users,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getStats = async (req, res, next) => {
+  try {
+    const date = new Date();
+    const lastYear = new Date(date.setFullYear(date.getFullYear() - 1));
+
+    const stats = await User.aggregate([
+      { $match: { createdAt: { $gte: lastYear } } },
+      {
+        $project: {
+          month: { $month: "$createdAt" },
+        },
+      },
+      {
+        $group: {
+          _id: "$month",
+          total: { $sum: 1 },
+        },
+      },
+    ]);
+
+    res.status(200).json({
+      message: "User stats fetched successfully",
+      stats: stats,
     });
   } catch (error) {
     next(error);
