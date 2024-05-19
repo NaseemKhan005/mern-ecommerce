@@ -18,10 +18,8 @@ export const updateProduct = async (req, res, next) => {
 
     const updatedProduct = await Product.findByIdAndUpdate(
       productId,
-      req.body,
-      {
-        new: true,
-      }
+      { $set: req.body },
+      { new: true }
     );
 
     res.status(200).json({

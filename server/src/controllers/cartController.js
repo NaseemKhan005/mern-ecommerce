@@ -10,3 +10,22 @@ export const createCart = async (req, res, next) => {
     next(error);
   }
 };
+
+export const updateCart = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+
+    const cart = await Cart.findByIdAndUpdate(
+      id,
+      { $set: req.body },
+      { new: true }
+    );
+
+    res.status(200).json({
+      message: "Cart updated Successfully!",
+      cart: cart,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
