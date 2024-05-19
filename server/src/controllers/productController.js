@@ -24,12 +24,21 @@ export const updateProduct = async (req, res, next) => {
       }
     );
 
-    res
-      .status(200)
-      .json({
-        message: "Product updated Successfully!",
-        product: updatedProduct,
-      });
+    res.status(200).json({
+      message: "Product updated Successfully!",
+      product: updatedProduct,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const deleteProduct = async (req, res, next) => {
+  try {
+    const productId = req.params.id;
+    await Product.findByIdAndDelete(productId);
+
+    res.status(200).json({ message: "Product deleted Successfully!" });
   } catch (error) {
     next(error);
   }
