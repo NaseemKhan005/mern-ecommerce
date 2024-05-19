@@ -60,7 +60,14 @@ export const getSingleProduct = async (req, res, next) => {
 
 export const getAllProducts = async (req, res, next) => {
   try {
-    const products = await Product.find();
+    const qNew = req.query.new;
+    const qCategory = req.query.category;
+
+    const products = qNew
+      ? await Product.find().sort({ createdAt: -1 }).limit(5)
+      : qCategory
+      ? await Product.find({ categories: { $in: qCategory } })
+      : await Product.find();
 
     res.status(200).json({
       message: "Products fetched Successfully!",
