@@ -6,6 +6,7 @@ const _config = {
   env: process.env.NODE_ENV,
   mongoUri: process.env.MONGO_URL,
   jwtSecret: process.env.JWT_SECRET,
+  stripeSecretKey: process.env.STRIPE_SECRET_KEY,
 };
 
 export const config = Object.freeze(_config);
