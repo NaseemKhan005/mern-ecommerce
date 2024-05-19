@@ -57,3 +57,16 @@ export const getSingleProduct = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getAllProducts = async (req, res, next) => {
+  try {
+    const products = await Product.find();
+
+    res.status(200).json({
+      message: "Products fetched Successfully!",
+      products: products,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
