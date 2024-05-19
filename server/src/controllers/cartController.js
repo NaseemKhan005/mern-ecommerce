@@ -29,3 +29,14 @@ export const updateCart = async (req, res, next) => {
     next(error);
   }
 };
+
+export const deleteCart = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    await Cart.findByIdAndDelete(id);
+
+    res.status(200).json({ message: "Cart deleted Successfully!" });
+  } catch (error) {
+    next(error);
+  }
+};
