@@ -40,3 +40,28 @@ export const deleteCart = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getUserCart = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const cart = await Cart.findOne({ userId: id });
+
+    res.status(200).json({
+      message: "User Cart retrieved Successfully!",
+      cart: cart,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getAllCarts = async (req, res, next) => {
+  try {
+    const carts = await Cart.find();
+    res
+      .status(200)
+      .json({ message: "All Carts retrieved Successfully!", carts: carts });
+  } catch (error) {
+    next(error);
+  }
+};
