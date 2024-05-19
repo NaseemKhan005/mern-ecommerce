@@ -43,3 +43,17 @@ export const deleteProduct = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getSingleProduct = async (req, res, next) => {
+  try {
+    const productId = req.params.id;
+    const product = await Product.findById(productId);
+
+    res.status(200).json({
+      message: "Product fetched Successfully!",
+      product: product,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
